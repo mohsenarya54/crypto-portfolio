@@ -113,10 +113,7 @@
   <div class="crypto-container" id="crypto-container"></div>
   <script>
     const cryptos = [
-       { name: "Filecoin", symbol: "FIL", apiId: "filecoin", amount: 1918 },
-       { name: "Filecoin_mina", symbol: "FIL", apiId: "filecoin", amount: 72.34 },
-       { name: "Mbox", symbol: "MBOX", apiId: "mobox", amount: 2822 },
-       { name: "Floki", symbol: "FLOKI", apiId: "floki", amount: 715011 }
+      { name: "Bitcoin", symbol: "BTC", apiId: "bitcoin", amount: 0.13463035 }
     ];
 
     async function fetchData() {
@@ -130,7 +127,7 @@
         }
         const usdToToman = parseFloat(exchangeRateInput);
 
-        const cryptoApiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=filecoin,mobox,floki&vs_currencies=usd&include_24hr_change=true";
+        const cryptoApiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true";
         const cryptoResponse = await fetch(cryptoApiUrl);
         const cryptoData = await cryptoResponse.json();
 
